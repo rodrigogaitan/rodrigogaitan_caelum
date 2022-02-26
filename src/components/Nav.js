@@ -1,11 +1,11 @@
 const Nav = () => {
     return(
     <header>
-        <h1>caelum</h1>
+        <h1><a href='#'>caelum</a></h1>
             <nav>
-                <a href="#" >Home</a>
-                <a href="#" >Products</a>
-                <a href="#" >Contact</a>
+                <a href="#" >products</a>
+                <a href="#" >contact</a>
+                <a href="#" >more</a>
             </nav>
     </header>
     )
