@@ -6,7 +6,12 @@
     font-family: 'Spartan', sans-serif;
 }
 
-header{
+
+a{
+    text-decoration: none;
+}
+
+#nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +31,11 @@ header{
     }
 }
 
-
-a{
-    text-decoration: none;
+#saludo{
+    margin: 3rem;
+    padding: 1rem;
+    border: solid 2px #F2CB05;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
 }
