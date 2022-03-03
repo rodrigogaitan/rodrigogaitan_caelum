@@ -1,8 +1,11 @@
-const ItemListCont = (props) => {
+import Count from "./Count"
+
+const ItemListCont = () => {
+
     return(
-        <body>
-            <h2 id="saludo">{props.greeting}</h2>
-        </body>
+        <>
+            <div id="saludo"><Count inicial={1} stock={5} onAdd={onAdd}/></div>
+        </>
     )
 }
 
