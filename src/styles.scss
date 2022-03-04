@@ -67,3 +67,11 @@ button:active {
     border-radius: 10px;
     padding: 1rem;
 }
+
+/*
+ {ItemList.map= () => {
+        return(
+            <Item key={ItemList.id} name={ItemList.name} precio={ItemList.precio} img={ItemList.img}/>
+        )
+    }}
+    */

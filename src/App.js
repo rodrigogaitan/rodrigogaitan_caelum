@@ -5,7 +5,7 @@ function App() {
     return (
         <>
             <Nav />
-            <ItemListCont/>
+            <ItemListCont greeting='¡Hola!'/>
         </>
     )
 }
