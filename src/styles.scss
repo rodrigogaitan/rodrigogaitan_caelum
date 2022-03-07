@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
+
 *{
     margin: 0rem;
     padding: 0rem;
@@ -18,6 +19,7 @@ a{
     background-color: #212121;
     h1{
         a{
+            font-size: x-large;
             color: #F2CB05;
             margin: 2rem;
         }
@@ -68,10 +70,26 @@ button:active {
     padding: 1rem;
 }
 
-/*
- {ItemList.map= () => {
-        return(
-            <Item key={ItemList.id} name={ItemList.name} precio={ItemList.precio} img={ItemList.img}/>
-        )
-    }}
-    */
+//CartItem
+
+#item{
+    position: relative;
+    border: #999E9E 1px solid;
+    border-radius: 5px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    img{
+        margin: 1rem;
+        border: #212121 0.8px solid;
+        border-radius: 3px;
+    }
+    div{
+        h2{
+            font-weight: bolder;
+        }
+    }
+}
+

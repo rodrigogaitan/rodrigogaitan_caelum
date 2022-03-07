@@ -1,12 +1,10 @@
-import Count from "./Count"
+import ItemList from "./ItemList"
 
 const ItemListCont = () => {
 
-    const onAdd = () => {}
-
     return(
         <>
-        <div id="saludo"><Count inicial={1} stock={5} onAdd={onAdd}/></div>
+        <ItemList/>
         </>
     )
 }
