@@ -1,7 +1,7 @@
 
 const Item = (props) => {
   return (
-  <div id="item" className='m-2'>
+  <div id="item" className='col-12 md-6 m-3'>
     <img src={props.img} className='img-fluid' width="200px"/>
       <div>
         <h2>{props.name}</h2>

@@ -1,4 +1,5 @@
 import {useState} from "react"
+import ItemDetailCont from "./ItemDetailCont"
 
 
 const Count = (props) => {
@@ -6,7 +7,7 @@ const Count = (props) => {
     const [contador, setContador]= useState(props.inicial)
 
     const sumar= () => {
-        if(contador < props.stock)
+        if(contador < props.product.stock)
         setContador(contador + 1)
     }
 
@@ -18,7 +19,7 @@ const Count = (props) => {
     const onAdd=() => {}
 
     return(
-        <>
+        <div id="count">
         <h2>Cantidad</h2>
         <div id="bot">
         <button onClick={restar}>-</button>
@@ -27,7 +28,7 @@ const Count = (props) => {
         </div>
         <button onClick={onAdd}>Agregar al Carrito</button>
         <p>Disponibles {props.stock}</p>
-        </>
+        </div>
     )
 }
 

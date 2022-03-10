@@ -49,7 +49,7 @@ button{
     padding: 0.8rem;
     background-color: #212121;
     color: #F2CB05;
-    border: none;
+    border: #999E9E 1px solid;
     border-radius: 10px;
 }
 
@@ -73,10 +73,9 @@ button:active {
 //CartItem
 
 #item{
-    position: relative;
     border: #999E9E 1px solid;
     border-radius: 5px;
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -93,3 +92,43 @@ button:active {
     }
 }
 
+#itemList{
+    display: flex;
+    justify-content: center;
+}
+
+#loading{
+    display: flex;
+    justify-content: center;
+}
+
+
+//IDetalil
+
+#detail{
+    background-color: #212121;
+    color: white;
+    padding: 1rem;
+    border: #999E9E 1px solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    img{
+        margin: 1rem;
+        border: #212121 0.8px solid;
+        border-radius: 3px;
+    }
+
+    div{
+        padding: 0.5rem;
+        align-items: center;
+        h2{
+            font-weight: bolder;
+            color: #F2CB05;
+        }
+        
+    }
+}
