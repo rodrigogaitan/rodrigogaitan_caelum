@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
-
-*{
-    margin: 0rem;
-    padding: 0rem;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Spartan', sans-serif;
+}
+
+html,
+body,
+#root {
+    height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -12,18 +23,16 @@ a{
     text-decoration: none;
 }
 
+#logo{
+    font-size: x-large;
+    color: #F2CB05;
+    margin: 2rem;
+}
 #nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #212121;
-    h1{
-        a{
-            font-size: x-large;
-            color: #F2CB05;
-            margin: 2rem;
-        }
-    }
     nav{
         display: flex;
         a{
@@ -31,6 +40,16 @@ a{
             color: white;
         }
     }
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
+    display: flex;
+}
+
+#mov:hover{
+    color: #F2CB05;
 }
 
 #saludo{
@@ -44,7 +63,9 @@ a{
 
 //Contador
 
-button{
+#boton{
+    text-decoration: none;
+    font-size: small;
     margin: 0.2rem;
     padding: 0.8rem;
     background-color: #212121;
@@ -53,7 +74,7 @@ button{
     border-radius: 10px;
 }
 
-button:active { 
+#boton:active { 
     background: #F2CB05;
     color: #212121;
 } 
@@ -73,21 +94,22 @@ button:active {
 //CartItem
 
 #item{
+    width: 35vh;
     border: #999E9E 1px solid;
-    border-radius: 5px;
-    width: 30%;
-    display: flex;
-    justify-content: center;
+    border-radius: 5px; 
+    justify-content: space-around;
     text-align: center;
     align-items: center;
     img{
         margin: 1rem;
+        height: 20vh;
         border: #212121 0.8px solid;
         border-radius: 3px;
     }
     div{
-        h2{
+        h2{ 
             font-weight: bolder;
+            font-size: 1rem;
         }
     }
 }
@@ -131,4 +153,16 @@ button:active {
         }
         
     }
+}
+
+
+//Footers
+
+#footer{
+    margin-top: 1rem;
+    background-color: #212121;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8em;   
 }
