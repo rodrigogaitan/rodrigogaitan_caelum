@@ -2,32 +2,29 @@ import {useState} from "react"
 import ItemDetailCont from "./ItemDetailCont"
 
 
-const Count = (props) => {
+const Count = ({stock,initial,onAdd}) => {
     
-    const [contador, setContador]= useState(props.inicial)
+    const [contador, setContador]= useState(initial)
 
     const sumar= () => {
-        if(contador < props.product.stock)
+        if(contador < stock)
         setContador(contador + 1)
     }
 
     const restar= () => {
-        if(contador > props.inicial)
+        if(contador > initial)
         setContador(contador - 1)
     }
     
-    const onAdd=() => {}
 
     return(
         <div id="count">
-        <h2>Cantidad</h2>
         <div id="bot">
-        <button onClick={restar}>-</button>
+        <button onClick={restar} id='boton'>-</button>
         <p id="conta">{contador}</p>
-        <button onClick={sumar}>+</button>
+        <button onClick={sumar} id='boton'>+</button>
         </div>
-        <button onClick={onAdd}>Agregar al Carrito</button>
-        <p>Disponibles {props.stock}</p>
+        <button onClick={onAdd} id='boton'>Agregar al Carrito</button>
         </div>
     )
 }
