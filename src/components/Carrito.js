@@ -1,37 +1,26 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import Spinner from 'react-bootstrap/Spinner'
-import { toast } from "react-toastify";
+import { useContext, useEffect } from "react";
+import { CartContext } from "./CartContext";
 
 
 const Carrito = () => {
 
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const [cart, setCart] = useState()
+    const { cart, clear, remove } = useContext(CartContext)
 
-
-    useEffect(()=>{
-        const work = new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve(cart)
-            }, 1000)
-        })
-        .then((respuesta)=>{
-            setCart(cart)
-        })
-        .catch((rej) => {
-            toast.error("Error al cargar los productos!");
-            setError(true);
-        })
-        .finally(()=>{
-            setLoading(false)
-        })
-        })
-        
+        console.log(cart);
     return(
         <div className="container">
-        {loading ? <div id="loading"><Spinner animation="grow" /></div> : <h2 id="saludo">¡Hubo un inconveniente, te pedimos disculpas, volver a intentar en unos minutos!</h2>}
+        {cart.map(item => {
+                return (
+                <div key={item.product.id} className='row' id="cart">
+                <img src={item.product.img} id="imagen"/>
+                <p className="col">"{item.product.name}"</p>
+                <p className="col">x {item.count} Unid.</p>
+                <p className="col">${item.product.precio * item.count}</p>
+                <button onClick={()=>remove(item.product)} id='borrar' className="col">X</button>
+                </div>
+            )
+        })}
+        <button onClick={clear} id='boton'> Vaciar Carrito</button>
         </div> 
     )
 }

@@ -166,3 +166,29 @@ main {
     text-align: center;
     font-size: 0.8em;   
 }
+
+//Cart
+
+#cart{
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #212121;
+    color: #F2CB05;
+    border: #999E9E 1px solid;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+    img{
+        width: 13vh;
+    }
+}
+
+#borrar{
+    text-decoration: none;
+    font-size: small;
+    margin: 0.2rem;
+    padding: 0.8rem;
+    background-color: #212121;
+    color: red;
+    border: #212121 1px solid;
+}

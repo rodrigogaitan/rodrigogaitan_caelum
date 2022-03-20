@@ -24,9 +24,9 @@ const Count = ({stock,initial,onAdd}) => {
         <p id="conta">{contador}</p>
         <button onClick={sumar} id='boton'>+</button>
         </div>
-        <button onClick={onAdd} id='boton'>Agregar al Carrito</button>
+        <button onClick={() => onAdd(contador)} id='boton'>Agregar al Carrito</button>
         </div>
-    )
+    ) 
 }
 
 export default Count

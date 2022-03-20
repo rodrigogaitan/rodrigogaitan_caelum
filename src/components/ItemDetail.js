@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Count from "./Count"
 import { toast } from 'react-toastify'; 
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 
 const ItemDetail = ({products}) => {
 
+    const { addItem, cart } = useContext(CartContext)
+
     const [selected, setSelected] = useState(false)
 
-    const onAdd = (uniSelect) => {
+    const onAdd = contador => {
+        addItem(products, contador)
         toast.success('Producto añadido al carrito!', {
             position: "top-center",
             autoClose: 1500,
@@ -19,14 +23,10 @@ const ItemDetail = ({products}) => {
             progress: undefined,
             theme: "dark"
             });
-        if(uniSelect != undefined){
-            setSelected(uniSelect)
-        }
     }
 
-
     return (
-    <div id="detail" className='container'>
+    <div id="detail">
         <img src={products.img} className='img-fluid' width="200px"/>
         <div>
             <h2>{products.name}</h2>
