@@ -172,8 +172,7 @@ main {
 #cart{
     margin: 1rem;
     padding: 1rem;
-    background-color: #212121;
-    color: #F2CB05;
+    font-weight: bolder;
     border: #999E9E 1px solid;
     border-radius: 15px;
     align-items: center;
@@ -191,4 +190,5 @@ main {
     background-color: #212121;
     color: red;
     border: #212121 1px solid;
+    border-radius: 8px;
 }

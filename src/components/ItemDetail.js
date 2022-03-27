@@ -13,18 +13,16 @@ const ItemDetail = ({products}) => {
 
     const onAdd = contador => {
         addItem(products, contador)
-        toast.success('Producto añadido al carrito!', {
+        toast.success('🛒 Agregado al Carrito', {
             position: "top-center",
             autoClose: 1500,
             hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
             progress: undefined,
-            theme: "dark"
             });
     }
-
     return (
     <div id="detail">
         <img src={products.img} className='img-fluid' width="200px"/>

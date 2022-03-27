@@ -96,9 +96,9 @@ export let items = [
 ]
 
 const ItemListCont = () => {
-    const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
+    const [error, setError] = useState(false);
     const { genero } = useParams();
 
 
