@@ -2,8 +2,9 @@ import { useState, useEffect } from "react"
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from "react-router-dom"
 import ItemDetail from './ItemDetail'
-import { items } from './ItemListCont'
 import { toast } from "react-toastify";
+import { getDocs, doc, query, collection, where} from "firebase/firestore";
+import { db } from "./Firebase";
 
 const ItemDetailCont = () => {
 
@@ -13,29 +14,19 @@ const ItemDetailCont = () => {
     const { codigo } = useParams();
 
 useEffect(() => {
-    setLoading(true);
-    const pedido = new Promise((res, rej) => {
-        setTimeout(() => {
-            res(items);
-        }, 2000)
-    })
+    
+    const consulta = query(collection(db, 'books'), where('codigo', '==', codigo))
+    getDocs(consulta)
+    .then((res)=> setProducts(res.docs.map(p=> p.data())))
 
-    pedido
-        .then((res) => {
-            const result = items.find(product => {
-                return (product.codigo === codigo); 
-            })
-            setProducts(result);
-
-        })
-        .catch((rej) => {
-            toast.error("Error al cargar los productos!");
-            setError(true);
-        })
-        .finally(() => {
-            setLoading(false);
-        })
-}, [])
+    .catch((err)=>
+        toast.error("Error al cargar los productos!"),
+        setError(true))
+    .finally(()=>{
+        setLoading(false)}
+    )
+},[codigo])   
+console.log(products)
 
 
     return(
