@@ -18,7 +18,8 @@ const Nav = () => {
                 <NavLink to={'/tipo/terror'} id='mov'>terror</NavLink>
                 <NavLink to={'/tipo/historico'} id='mov'>historico</NavLink>
                 <NavLink to={'/tipo/policial'} id='mov'>policial</NavLink>
-                {cartCount === 0 || <NavLink to={'/carrito'} id='mov'><Card/></NavLink>}       
+                
+                <NavLink to={'/carrito'} id='mov'><Card/></NavLink> 
             </nav>
     </header>
     )

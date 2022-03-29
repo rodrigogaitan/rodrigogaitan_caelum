@@ -17,7 +17,7 @@ useEffect(() => {
     
     const consulta = query(collection(db, 'books'), where('codigo', '==', codigo))
     getDocs(consulta)
-    .then((res)=> setProducts(res.docs.map(p=> p.data())))
+    .then((res)=> setProducts(res.docs.map(p=> p.data())[0]))
 
     .catch((err)=>
         toast.error("Error al cargar los productos!"),
@@ -26,7 +26,7 @@ useEffect(() => {
         setLoading(false)}
     )
 },[codigo])   
-console.log(products)
+
 
 
     return(
