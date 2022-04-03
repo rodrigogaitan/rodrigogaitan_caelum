@@ -61,15 +61,15 @@ export const CartContextProv = ({children}) => {
         setCart([])
         setTotal(0)
         setCartCount(0)
-        toast.info('Se vacío el carrito', {
-            position: "top-center",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            });  
+        // toast.info('Se vacío el carrito', {
+        //     position: "top-center",
+        //     autoClose: 1000,
+        //     hideProgressBar: false,
+        //     closeOnClick: false,
+        //     pauseOnHover: false,
+        //     draggable: false,
+        //     progress: undefined,
+        //     });  
     }
 
     const isInCart = (product) => {
