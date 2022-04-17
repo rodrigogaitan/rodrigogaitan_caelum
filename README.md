@@ -9,10 +9,15 @@ Este proyecto consiste en un e-commerce desenvuelto en React.js y librerias que 
 ###Librerias y Frameworks
 
 React.js (v17.0.2)
+
 Bootstrap (v5.1.3)
+
 React-bootstrap: (v2.2.0)
+
 React-router-dom (v6.2.2)
+
 Firebase (v9.6.9)
+
 React-toastify (v8.2.0)
 
 --
@@ -49,8 +54,7 @@ $ git clone https://github.com/rodrigogaitan/rodrigogaitan_caelum
 ~~~
 npm install
 ~~~
-6. 
-Inicie el repositorio. En la línea de comando, ejecute el comando:
+6. Inicie el repositorio. En la línea de comando, ejecute el comando:
 ~~~
 npm start
 ~~~
