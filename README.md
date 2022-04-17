@@ -1,4 +1,5 @@
 ---Proyecto E-Commerce
+
 ###Descripcion del Proyecto:
 
 Este proyecto consiste en un e-commerce desenvuelto en React.js y librerias que se detallaran más adelante; Este proyecto es solo Front-End y contiene componentes funcionales como: contenedor de productos, detalle de producto, carrito, utilizacion de base de datos, entre otros. 
