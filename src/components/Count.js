@@ -1,5 +1,4 @@
 import {useState} from "react"
-import ItemDetailCont from "./ItemDetailCont"
 
 
 const Count = ({stock,initial,onAdd}) => {

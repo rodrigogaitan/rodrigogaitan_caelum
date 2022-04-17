@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -66,43 +66,48 @@ const Carrito = () => {
     return(
         <div className="container">
             {cart.length > 0 ? 
-            <div>
-            <div>
-                <h5 className="text-center m-3 fw-bolder">Completa tus datos:</h5>
-                <div className="d-flex justify-content-around">
-                    <label>Nombre:</label>
-                    <input id="name" name="name" value={name} onChange={subirName}/>
-                    <label>E-Mail:</label>
-                    <input id="email" name="email" value={email} onChange={subirEmail}/>
-                </div>
-            </div>
+            <div className="d-flex justify-content-between">
+                    <div>
+                        {cart.map(item => {
+                                return (
+                                <div key={item.product.id} className='row' id="cart">
+                                <img src={item.product.img} id="imagen" className="col"/>
+                                <p className="col">"{item.product.name}"</p>
+                                <p className="col">x {item.count} Unid.</p>
+                                <p className="col">${item.product.precio * item.count}</p>
+                                <button onClick={()=>remove(item.product)} id='borrar' className="col">X</button>
+                                </div>
+                            )
+                        })}
 
-            {cart.map(item => {
-                    return (
-                    <div key={item.product.id} className='d-flex justify-content-evenly' id="cart">
-                    <img src={item.product.img} id="imagen"/>
-                    <p>"{item.product.name}"</p>
-                    <p>x {item.count} Unid.</p>
-                    <p>${item.product.precio * item.count}</p>
-                    <button onClick={()=>remove(item.product)} id='borrar'>X</button>
+                    <div className="d-flex justify-content-center">
+                        <h4 className="fw-bolder">Total : $ {total} </h4></div>
+                    <button onClick={clear} id='boton'> Vaciar Carrito</button>
+                        
+                    </div> 
+                    <div id="form">
+                        <div>
+                        <h5 className="text-center m-3 fw-bolder">Completa tus datos:</h5>
+                            <div>
+                                <p>Nombre</p>
+                                <input id="name" name="name" value={name} onChange={subirName}/>
+                            </div>
+                            <hr />
+                            <div>
+                                <p>Email</p>
+                                <input id="email" name="email" value={email} onChange={subirEmail}/>
+                            </div>
+                            <hr />
+                            <button onClick={check} id='boton'>Terminar la Compra</button>
+                        </div>
                     </div>
-                )
-            })}
-
-            <div className="d-flex justify-content-evenly">
-            <button onClick={clear} id='boton'> Vaciar Carrito</button>
-            <h4 className="fw-bolder">$ {total} </h4>
-            <button onClick={check} id='boton'>Terminar la Compra</button>
             </div>
-            </div> 
 
             :
 
-            <div id="cart">
+            <div className="text-center m-4" id="border">
                 <h3>¡Carrito Vacio!</h3>
-                <Link to={'/'}>
-                <button id='boton'>Volver</button>    
-                </Link>
+                <Link to={'/tipo'}><button id='boton'>Volver</button></Link>
             </div>
             
         }

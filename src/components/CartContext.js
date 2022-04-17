@@ -14,7 +14,7 @@ export const CartContextProv = ({children}) => {
         let CartAux = []
 
         if(isInCart(product)){
-            CartPro = cart.find(item => item.product == product)
+            CartPro = cart.find(item => item.product === product)
             CartPro.count =  CartPro.count + count
             CartAux = [...cart]
         }
@@ -61,19 +61,19 @@ export const CartContextProv = ({children}) => {
         setCart([])
         setTotal(0)
         setCartCount(0)
-        // toast.info('Se vacío el carrito', {
-        //     position: "top-center",
-        //     autoClose: 1000,
-        //     hideProgressBar: false,
-        //     closeOnClick: false,
-        //     pauseOnHover: false,
-        //     draggable: false,
-        //     progress: undefined,
-        //     });  
+        toast.info('Se vacío el carrito', {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            });  
     }
 
     const isInCart = (product) => {
-        return cart && cart.some(item => item.product == product)
+        return cart && cart.some(item => item.product === product)
     }
 
     const valueProvider = {

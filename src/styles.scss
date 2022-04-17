@@ -170,6 +170,7 @@ main {
 //Cart
 
 #cart{
+    width: 850px;
     margin: 1rem;
     padding: 1rem;
     font-weight: bolder;
@@ -232,4 +233,24 @@ input{
 
 #chome:hover{
     color: white;
+}
+
+//Form
+
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin: 1rem;
+    padding: 1rem;
+    border: #999E9E 1px solid;
+    border-radius: 5px;
+    text-align: center;
+}
+
+//CartVac
+#border{
+    border: #999E9E 1px solid;
+    border-radius: 5px; 
+    padding: 1rem;
 }

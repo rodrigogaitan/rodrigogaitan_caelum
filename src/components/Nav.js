@@ -1,12 +1,7 @@
 import { Link , NavLink } from "react-router-dom";
 import Card from './Card'
-import { CartContext } from "./CartContext";
-import { useContext } from "react";
-
 
 const Nav = () => {
-
-    const {cartCount} = useContext(CartContext)
 
     return(
     <header id='nav'>
